@@ -1,2 +1,4 @@
 #Ignores all .txt files
 *.txt
+#Ignores all files in /bin
+/bin
