@@ -66,4 +66,15 @@ public class MyFileWriter {
     private static void printFileSize(String fileName) {
         System.out.println(File.size(Path.get(fileName)));
     }
+    /**
+    * Reads a text file and returns its contents as a string.
+    * 
+    * @param filePath the path to the file
+    * @return the contents of the file as a string
+    * @throws IOException if an I/O error occurs
+    */
+    public static String stringify(String filePath) throws IOException {
+        return File.readString(Path.get(filePath));
+    }
+
 }
