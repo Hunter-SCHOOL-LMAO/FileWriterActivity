@@ -92,7 +92,7 @@ public class MyFileWriter {
      * Kudos to GeeksForGeeks.org for teaching me how to use MessgeDigest and best practices for 
      * converting stuff into Hexidecimal
      */
-    public String hashFile(String filePath){
+    public static String hashFile(String filePath){
         try{
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] intermediaryArray = md.digest(Files.readString(Paths.get(filePath), StandardCharsets.UTF_8).getBytes(StandardCharsets.UTF_8));
