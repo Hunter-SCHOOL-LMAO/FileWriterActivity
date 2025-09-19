@@ -45,6 +45,9 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // 0.4 HW
+        printFileSize(fileName1);
     }
     public void makeSecretFile(){
         try{
@@ -63,8 +66,15 @@ public class MyFileWriter {
         }
     }
     // Calculate and print the file size using the File class
-    private static void printFileSize(String fileName) {
-        System.out.println(File.size(Path.get(fileName)));
+    private static void printFileSize(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
     }
     /**
     * Reads a text file and returns its contents as a string.
